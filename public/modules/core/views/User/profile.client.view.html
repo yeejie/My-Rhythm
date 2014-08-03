@@ -1,0 +1,217 @@
+
+<div class="page page-profile">
+
+    <div class="row">
+        <div class="col-md-6">
+
+            <section class="panel panel-box">
+                <div class="panel-top bg-primary">
+                    <div class="text-center">
+                        <h3>{{user.displayName}}</h3>
+                        <p></p> 
+                    </div>
+                    <div class="divider divider-lg"></div>
+                    <div class="divider divider-lg"></div>
+                </div>
+                <div class="panel-img bg-primary">
+                    <img alt="" src="images/empty.jpg" class="img-circle">
+                </div>
+                <div class="list-justified-container">
+                    <ul class="list-justified text-center">
+                        <li>
+                            <p class="size-h3">0</p>
+                            <p class="text-muted">Tweets</p>
+                        </li>
+                        <li>
+                            <p class="size-h3">0</p>
+                            <p class="text-muted">Followers</p>
+                        </li>
+                        <li>
+                            <p class="size-h3">0</p>
+                            <p class="text-muted">Following</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        <section data-ng-controller="SettingsController">
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Profile Info</strong></div>
+                <div class="panel-body">
+                    <div class="media">
+                        <form data-ng-submit="updateUserProfile()" class="signin form-horizontal" autocomplete="off">
+			            <fieldset>
+                            <div class="media-body">
+                                <ul class="list-unstyled list-info">
+                                    <li>
+                                        <span class="icon glyphicon glyphicon-user"></span>
+                                        <label>First Name</label>
+                                        <input type="text" id="firstName" name="firstName" class="form-control" data-ng-model="user.firstName" placeholder="First Name">
+                                    </li>
+                                    <li>
+                                        <span class="icon glyphicon glyphicon-user"></span>
+                                        <label>Last Name</label>
+                                        <input type="text" id="lastName" name="lastName" class="form-control" data-ng-model="user.lastName" placeholder="Last Name">
+                                    </li>
+                                    <li>
+                                        <span class="icon glyphicon glyphicon-envelope"></span>
+                                        <label>Email</label>
+                                        <input type="text" id="email" name="email" class="form-control" data-ng-model="user.email" placeholder="Email">
+                                    </li>
+                                    <li>
+                                        <div class="text-center form-group">
+					                        <button type="submit" class="btn btn-large btn-primary">Save Profile</button>
+				                        </div>
+				                        <div data-ng-show="success" class="text-center text-success">
+					                        <strong>Profile Saved Successfully</strong>
+				                        </div>
+				                        <div data-ng-show="error" class="text-center text-danger">
+					                        <strong data-ng-bind="error"></strong>
+				                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </fieldset>
+		                </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+          
+        </div>
+        <div class="col-md-6">
+
+            <div class="ui-timline-container ui-timline-left">
+                <section class="ui-timeline">
+                    <article class="tl-item">
+                        <div class="tl-body">
+                            <div class="tl-entry">
+                                <div class="tl-caption">
+                                    <a href="javascript:;" class="btn btn-primary btn-block">Today</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tl-item">
+                        <div class="tl-body">
+                            <div class="tl-entry">
+                                <div class="tl-time">to do</div>
+                                <div class="tl-icon btn-icon btn-icon-round bg-info"><i class="fa fa-asterisk"></i></div>
+                                <div class="tl-content">
+                                    <h4 class="tl-tile text-primary">To Do</h4>
+                                    <p>to do</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tl-item">
+                        <div class="tl-body">
+                            <div class="tl-entry">
+                                <div class="tl-time">to do</div>
+                                <div class="tl-icon btn-icon btn-icon-round bg-warning"><i class="fa fa-shopping-cart"></i></div>
+                                <div class="tl-content">
+                                    <h4 class="tl-tile text-danger">To Do</h4>
+                                    <p>to do</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tl-item">
+                        <div class="tl-body">
+                            <div class="tl-entry">
+                                <div class="tl-time">to do</div>
+                                <div class="tl-icon btn-icon btn-icon-round bg-success"><i class="fa fa-camera"></i></div>
+                                <div class="tl-content">
+                                    <h4 class="tl-tile text-warning">To Do</h4>
+                                    <p>to do</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tl-item">
+                        <div class="tl-body">
+                            <div class="tl-entry">
+                                <div class="tl-time">to do</div>
+                                <div class="tl-icon btn-icon btn-icon-round bg-primary"><i class="fa fa-envelope-o"></i></div>
+                                <div class="tl-content">
+                                    <h4 class="tl-tile text-info">To Do</h4>
+                                    <p>to do/p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <article class="tl-item">
+                        <div class="tl-body">
+                            <div class="tl-entry">
+                                <div class="tl-caption">
+                                    <a href="javascript:;" class="btn btn-danger btn-block">Yesterday</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <article class="tl-item">
+                        <div class="tl-body">
+                            <div class="tl-entry">
+                                <div class="tl-time">to do</div>
+                                <div class="tl-icon btn-icon btn-icon-round bg-warning"><i class="fa fa-asterisk"></i></div>
+                                <div class="tl-content">
+                                    <h4 class="tl-tile">To Do</h4>
+                                    <p>to do</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tl-item">
+                        <div class="tl-body">
+                            <div class="tl-entry">
+                                <div class="tl-time">to do</div>
+                                <div class="tl-icon btn-icon btn-icon-round bg-success"><i class="fa fa-comment-o"></i></div>
+                                <div class="tl-content">
+                                    <h4 class="tl-tile text-warning">To Do</h4>
+                                    <p>to do</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tl-item">
+                        <div class="tl-body">
+                            <div class="tl-entry">
+                                <div class="tl-time">to do</div>
+                                <div class="tl-icon btn-icon btn-icon-round bg-danger"><i class="fa fa-folder-o"></i></div>
+                                <div class="tl-content">
+                                    <h4 class="tl-tile text-success">To Do</h4>
+                                    <p>to do</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tl-item">
+                        <div class="tl-body">
+                            <div class="tl-entry">
+                                <div class="tl-time">to do</div>
+                                <div class="tl-icon btn-icon btn-icon-round bg-primary"><i class="fa fa-envelope-o"></i></div>
+                                <div class="tl-content">
+                                    <h4 class="tl-tile text-info">To Do</h4>
+                                    <p>to do</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </section>
+            </div>
+        </div>
+    </div>
+
+</div>

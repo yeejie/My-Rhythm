@@ -1,0 +1,193 @@
+<div class="page page-dashboard" data-ng-controller="DashboardCtrl">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="panel panel-default">
+                <div class="panel-body thumbnail">
+                    <img src="images/running.png" alt="My Rhythm">
+                </div>
+            </div>              
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Exercise</h3>
+                    </div>
+                    <div class="panel-body text-center">
+                        <canvas data-gauge-chart
+                                data-data="gaugeExercise.data"
+                                data-options="gaugeExercise.options"
+                                style="width: 270px; height: 130px; "
+                                ></canvas>
+                        
+                        <div id="PreviewExercise">&nbsp;</div>
+                        <p style="line-height: 10px;">&nbsp;</p>
+                        <center>
+                            <img src="images/icons-health/exercise.png" width="20" height="20">&nbsp;
+                            <span class="badge badge-success" style="cursor:pointer" ng-click="setExercise(2)">&nbsp;</span>
+                            <span class="badge badge-warning" style="cursor:pointer" ng-click="setExercise(1)">&nbsp;</span>
+                            <span class="badge badge-danger" style="cursor:pointer" ng-click="setExercise(0)">&nbsp;</span>
+                            <p style="line-height: 10px;">&nbsp;</p>
+                            <alert ng-repeat="alert in MetricExercise" type="{{alert.type}}">{{alert.msg}}</alert>
+                        </center>
+                    </div>    
+                </div>
+        </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="row">
+        <div class="col-lg-4 col-xsm-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">BMI</h3>
+                </div>
+                <div class="panel-body text-center">
+                    <canvas data-gauge-chart
+                            data-data="gaugeBMI.data"
+                            data-options="gaugeBMI.options"
+                            style="width: 270px; height: 130px; "
+                            ></canvas>
+                    <div id="PreviewBMI">&nbsp;</div>
+                    <p style="line-height: 10px;">&nbsp;</p>
+                    <center>
+                        <img src="images/icons-health/weight.jpeg" width="20" height="20">&nbsp;
+                        <span class="badge badge-success" style="cursor:pointer" ng-click="setBMI(2)">&nbsp;</span>
+                        <span class="badge badge-warning" style="cursor:pointer" ng-click="setBMI(1)">&nbsp;</span>    
+                        <span class="badge badge-danger" style="cursor:pointer" ng-click="setBMI(0)">&nbsp;</span>
+                        <p style="line-height: 10px;">&nbsp;</p>
+                        <alert ng-repeat="alert in MetricBMI" type="{{alert.type}}">{{alert.msg}}</alert>
+                    </center>
+                </div>                                
+            </div>
+        </div>
+        <div class="col-lg-4 col-xsm-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Blood Pressure (Systolic)</h3>
+                </div>
+                <div class="panel-body text-center">
+                    <canvas data-gauge-chart
+                            data-data="gaugeBloodPressureS.data"
+                            data-options="gaugeBloodPressureS.options"
+                            style="width: 270px; height: 130px; "
+                            ></canvas>
+                    <div id="PreviewBPS">&nbsp;</div>
+                    <p style="line-height: 10px;">&nbsp;</p>
+                    <center>
+                        <img src="images/icons-health/bloodP.jpeg" width="20" height="20">&nbsp;    
+                        <span class="badge badge-success" style="cursor:pointer" ng-click="setBloodPressureS(2)">&nbsp;</span>
+                        <span class="badge badge-warning" style="cursor:pointer" ng-click="setBloodPressureS(1)">&nbsp;</span>
+                        <span class="badge badge-danger" style="cursor:pointer" ng-click="setBloodPressureS(0)">&nbsp;</span>
+                        <p style="line-height: 10px;">&nbsp;</p>
+                        <alert ng-repeat="alert in MetricBloodPressureS" type="{{alert.type}}">{{alert.msg}}</alert>
+                    </center>
+                </div>                             
+            </div>
+        </div>
+        <div class="col-lg-4 col-xsm-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Blood Pressure (Diastolic)</h3>
+                </div>
+                <div class="panel-body text-center">
+                    <canvas data-gauge-chart
+                            data-data="gaugeBloodPressureD.data"
+                            data-options="gaugeBloodPressureD.options"
+                            style="width: 270px; height: 130px; "
+                            ></canvas>
+                    <div id="PreviewBPD">&nbsp;</div>
+                    <p style="line-height: 10px;">&nbsp;</p>
+                    <center>
+                        <img src="images/icons-health/bloodP.jpeg" width="20" height="20">&nbsp;    
+                        <span class="badge badge-success" style="cursor:pointer" ng-click="setBloodPressureD(2)">&nbsp;</span>
+                        <span class="badge badge-warning" style="cursor:pointer" ng-click="setBloodPressureD(1)">&nbsp;</span>
+                        <span class="badge badge-danger" style="cursor:pointer" ng-click="setBloodPressureD(0)">&nbsp;</span>
+                        <p style="line-height: 10px;">&nbsp;</p>
+                        <alert ng-repeat="alert in MetricBloodPressureD" type="{{alert.type}}">{{alert.msg}}</alert>
+                    </center>
+                </div>                             
+            </div>
+        </div>
+        
+
+    </div>
+    <!-- end stats -->
+
+    <!-- Stats -->
+    <div class="row">
+        <div class="col-lg-4 col-xsm-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Heart Rate</h3>
+                </div>
+                <div class="panel-body text-center">
+                    <canvas data-gauge-chart
+                            data-data="gaugeHeartRate.data"
+                            data-options="gaugeHeartRate.options"
+                            style="width: 270px; height: 130px; "
+                            ></canvas>
+                    <div id="PreviewHeartRate">&nbsp;</div>
+                    <p style="line-height: 10px;">&nbsp;</p>
+                    <center>
+                        <img src="images/icons-health/heart.jpeg" width="20" height="20">&nbsp;
+                        <span class="badge badge-success" style="cursor:pointer" ng-click="setHeartRate(2)">&nbsp;</span>
+                        <span class="badge badge-danger" style="cursor:pointer" ng-click="setHeartRate(0)">&nbsp;</span>
+                        <p style="line-height: 10px;">&nbsp;</p>
+                        <alert ng-repeat="alert in MetricHeartRate" type="{{alert.type}}">{{alert.msg}}</alert>
+                    </center>
+                </div>          
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-xsm-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Respiratory Rate</h3>
+                </div>
+                <div class="panel-body text-center">
+                    <canvas data-gauge-chart
+                            data-data="gaugeRespRate.data"
+                            data-options="gaugeRespRate.options"
+                            style="width: 270px; height: 130px; "
+                            ></canvas>
+                        <div id="PreviewRespRate">&nbsp;</div>
+                        <p style="line-height: 10px;">&nbsp;</p>
+                        <center>
+                            <img src="images/icons-health/respiratory.png" width="20" height="20">&nbsp;
+                            <span class="badge badge-success" style="cursor:pointer" ng-click="setRespRate(2)">&nbsp;</span>
+                            <span class="badge badge-danger" style="cursor:pointer" ng-click="setRespRate(0)">&nbsp;</span>
+                            <p style="line-height: 10px;">&nbsp;</p>
+                            <alert ng-repeat="alert in MetricRespRate" type="{{alert.type}}">{{alert.msg}}</alert>
+                    </center>
+                </div>                               
+            </div>
+        </div>
+        <div class="col-lg-4 col-xsm-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Blood Oxygen</h3>
+                </div>
+                <div class="panel-body text-center">
+                    <canvas data-gauge-chart
+                            data-data="gaugeBloodOxygen.data"
+                            data-options="gaugeBloodOxygen.options"
+                            style="width: 270px; height: 130px; "
+                            ></canvas>
+                    <div id="PreviewBO">&nbsp;</div>
+                    <p style="line-height: 10px;">&nbsp;</p>
+                    <center>
+                        <img src="images/icons-health/bloodO.png" width="20" height="20">&nbsp;    
+                        <span class="badge badge-success" style="cursor:pointer" ng-click="setBloodOxygen(2)">&nbsp;</span>
+                        <span class="badge badge-danger" style="cursor:pointer" ng-click="setBloodOxygen(0)">&nbsp;</span>
+                        <p style="line-height: 10px;">&nbsp;</p>
+                        <alert ng-repeat="alert in MetricBloodOxygen" type="{{alert.type}}">{{alert.msg}}</alert>
+                    </center>
+                </div>                             
+            </div>
+        </div>
+
+    </div>
+    <!-- end stats -->
+
+</div>
+  

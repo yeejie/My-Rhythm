@@ -1,0 +1,8 @@
+
+/build
+/.settings
+/iisnode
+/node_modules
+/public/lib
+/config/env/development_my.js
+/web.config

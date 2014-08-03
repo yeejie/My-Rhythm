@@ -1,0 +1,56 @@
+<div class="page">
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <section class="panel panel-default">
+        <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Get Started</strong></div>
+        <div class="panel-body">
+            <p>1. Register your developer account at <a href="http://qh.rhythm.sg/">http://qh.rhythm.sg</a> to access the API’s REST methods such as GET and POST</p>
+            <ul>
+                <li>Check out APIS section for code samples of Javascript, C#, PHP, Ruby, Curl, Java and ObjC</li>
+                <li>Try out the API with built-in Console</li>
+                <li>You need to supply your provider <span class="label label-primary">{{user.provider}}</span> and userid <span class="label label-primary">{{user.providerData.id}}</span></li>
+                <li>Use <a href="http://www.epochconverter.com/">epochconverter.com</a> for epoch &amp; unix timestamp conversion</li>
+            </ul>
+            <p></p>
+            <p>2. Raspberry Pi code as follows for POST method:</p>
+            <pre class="prettyprint lang-py" style="width: 800px">
+    import json
+    import pycurl
+
+    x = json.dumps({
+            "meta":"PulseRate",
+            "value":125,
+            "utc":"1404701788", 
+            "provider":"facebook",
+            "user":"1234567890"
+            })
+    headers = ['Content-Type: application/json']
+    url_dir = 'https://qh.azure-api.net/dev/Prototyping?subscription-key=&lt;your subscription key&gt;'
+    c = pycurl.Curl()
+    c.setopt(pycurl.URL, url_dir)
+    c.setopt(pycurl.HTTPHEADER, headers)
+    c.setopt(pycurl.POST, 1)
+    c.setopt(pycurl.POSTFIELDS, '%s' % x)
+    c.perform()
+    print("Uploaded!")
+            </pre>
+            <p></p>
+            <p>3. Arduino code as follows for POST method:</p>
+            <pre class="prettyprint lang-c" style="width: 800px">
+    if (client.connect()) {
+	String postData = "{\"meta\":\"WaterIntake\",\"value\":" + String(percent) + ",\"utc\":\"1404701788\",\"provider\":\"facebook\",\"user\":\"1234567890\"}";
+        Serial.println("connected");
+        client.println("POST /API/Prototyping HTTP/1.1");
+        client.println("Host: qhwebapisvc.cloudapp.net");
+        client.println("Authorization: Basic cGFydGljaXBhbnRzQGN4YS5jb206UEAkJHcwcmQ=");
+        client.println("Content-Type: application/json");
+        client.print("Content-Length: ");
+        client.println((postData).length());
+        client.println("Cache-Control: no-cache");
+        client.println();
+        client.println(postData);
+    }
+            </pre>
+        </div>
+    </section> 
+
+</div>

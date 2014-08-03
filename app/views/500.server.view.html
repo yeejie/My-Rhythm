@@ -1,0 +1,52 @@
+<html class="no-js">
+    <head>
+        <title>{{title}}</title>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+        <!-- Fav Icon -->
+	    <link href="/images/brand/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="modules/core/styles/bootstrap.css">
+	    <link rel="stylesheet" href="modules/core/styles/main.css">
+	    <link rel="stylesheet" href="modules/core/styles/ui.css">
+	    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+	    <link rel="stylesheet" href="lib/weather-icons/css/weather-icons.min.css">
+
+    </head>
+    <body data-ng-app="app" id="app" class="app ng-scope body-wide" data-custom-page="" data-off-canvas-nav="" data-ng-controller="AppCtrl" data-ng-class=" {'layout-boxed': admin.layout === 'boxed' } ">
+
+        <div class="main-container">
+        <div class="page-err ng-scope">
+                <div class="err-container text-center">
+                <div class="err">
+                    <div class="err-inner">
+                         <h1>500</h1>
+                         <h2>Server Error</h2>
+                     </div>
+                </div>
+
+                <div class="err-mss">
+                    <p>Sorry, something goes wrong with server.</p>
+                    <p>{{error}}</p>
+                </div>
+                <div class="err-body">
+                    <a href="#!/" class="btn btn-lg btn-primary">
+                        <span class="glyphicon glyphicon-home"></span>
+                        <span class="space"></span>
+                        Go Back to Home Page
+                    </a>
+                </div>
+            </div>
+            <!--     <div class="footer text-center">
+            Copyright 2014 {{main.brand}} Admin
+            </div> -->
+        </div>
+        </div>
+
+    </body>
+</html>
